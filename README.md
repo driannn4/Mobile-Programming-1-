@@ -1,16 +1,18 @@
-# flutter_application_1
+# 📱 Mobile Programming 1 - Flutter
 
-A new Flutter project.
+Repository ini berisi kumpulan tugas dan materi pembelajaran dari mata kuliah **Mobile Programming 1** menggunakan framework **Flutter**.
 
-## Getting Started
+## 📚 Materi yang Dicakup
+- Pertemuan 1 sampai 7
+- Pengenalan Flutter & Dart
+- Penggunaan widget dasar
+- Navigasi antar halaman
+- State management dasar (`setState`)
+- Pembuatan UI interaktif
+- Simulasi project mobile sederhana
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Cara Menjalankan Project
+1. Pastikan sudah menginstall Flutter dan sudah meng-setup environment-nya.
+2. Clone repository ini:
+   ```bash
+   git clone https://github.com/driannn4/Mobile-Programming-1-.git
