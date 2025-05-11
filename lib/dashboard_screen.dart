@@ -8,20 +8,25 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Simulasi data untuk progress bar
+    int totalTugas = 12;
+    int tugasSelesai = 9;
+    double progress = tugasSelesai / totalTugas;
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Transparan untuk AppBar
+        backgroundColor: Colors.transparent,
         elevation: 0,
         flexibleSpace: ClipRRect(
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color(0xAA673AB7), // Ungu lebih gelap (bagian bawah body)
-                    Color(0xAA4A148C), // Ungu muda cerah (bagian atas body)
+                    Color(0xAA673AB7), // Ungu gelap (bawah)
+                    Color(0xAA4A148C), // Ungu terang (atas)
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -30,14 +35,13 @@ class DashboardScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: Icon(
+        title: const Icon(
           Icons.auto_awesome,
           size: 30,
-          color: Colors.white, // Warna ikon AppBar putih
+          color: Colors.white,
         ),
         centerTitle: true,
         actions: [
-          // Ganti ikon kanan jadi ikon project seperti assignment
           IconButton(
             icon: const Icon(Icons.assignment, color: Colors.pinkAccent),
             onPressed: () {},
@@ -50,8 +54,8 @@ class DashboardScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF3A0CA3), // Ungu terang (bagian atas body)
-              Color(0xFF1E1F28), // Biru gelap (bagian bawah body)
+              Color(0xFF3A0CA3), // Ungu terang
+              Color(0xFF1E1F28), // Biru gelap
             ],
           ),
         ),
@@ -92,6 +96,34 @@ class DashboardScreen extends StatelessWidget {
                       textColor: Colors.white,
                     ),
                   ],
+                ),
+
+                const SizedBox(height: 24),
+
+                const Text(
+                  'Progress Tugas Hari Ini',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 8),
+
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: LinearProgressIndicator(
+                    value: progress,
+                    minHeight: 14,
+                    backgroundColor: Colors.white12,
+                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.greenAccent),
+                  ),
+                ),
+
+                const SizedBox(height: 8),
+                Text(
+                  '$tugasSelesai dari $totalTugas tugas selesai',
+                  style: const TextStyle(color: Colors.white70, fontSize: 14),
                 ),
 
                 const SizedBox(height: 24),
